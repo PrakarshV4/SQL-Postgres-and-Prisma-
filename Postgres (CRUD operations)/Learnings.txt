@@ -1,0 +1,18 @@
+//Insert into table
+const insertUserText = 'INSERT INTO users (email, password) VALUES ($1, $2) RETURNING id'; //$1, $2 is done to prevent sql injection errors
+const userValues = ['john.do11e@gmail2.com', 'hashed_password_here'];
+
+let response = await client.query(insertUserText, userValues);
+
+
+//GETS
+SELECT * FROM todos WHERE user_id = desired_user_id;
+
+//UPDATES
+UPDATE todos SET done = $1 WHERE id = $2;
+
+//DELETES
+DELETE FROM todos WHERE id = $1;
+
+//DROP 
+DROP TABLE IF EXISTS todos; 
